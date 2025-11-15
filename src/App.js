@@ -11,11 +11,11 @@ function App() {
   const [showFavorites, setShowFavorites] = useState(false);
   const [favorites, setFavorites] = useState([]);
 
-  // Your Spoonacular API Key
+  
   const API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
   const BASE_URL = 'https://api.spoonacular.com/recipes';
 
-  // Load favorites from localStorage on mount
+ 
   useEffect(() => {
     const savedFavorites = localStorage.getItem('recipeFavorites');
     if (savedFavorites) {
@@ -23,7 +23,7 @@ function App() {
     }
   }, []);
 
-  // Save favorites to localStorage whenever it changes
+ 
   useEffect(() => {
     localStorage.setItem('recipeFavorites', JSON.stringify(favorites));
   }, [favorites]);
@@ -182,5 +182,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
